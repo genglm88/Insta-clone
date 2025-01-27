@@ -46,7 +46,7 @@ const router = useRouter()
         </div>
       </div>
       <div className="flex flex-col space-y-4">
-        <TextArea  name='description' rows={15}  placeholder="Add photo description... " />
+        <TextArea  name='description' rows={10}  placeholder="Add photo description... " />
         <Button variant="classic">Publish</Button>
       </div>
     </form>
