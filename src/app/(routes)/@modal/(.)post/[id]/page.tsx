@@ -1,8 +1,9 @@
-import { use } from "react";
+//import { use } from "react";
 import Modal from "@/app/(routes)/components/Modal"
 import { singlePostData } from "@/app/(routes)/components/postingAction"
 import SinglePostContent from "@/app/(routes)/components/SinglePostContent"
 
+type idParams = Promise<{id: string}>
 // // Define the type for `params`
 // type IdPageProp = {
 //   params:IdPageParam
@@ -13,8 +14,9 @@ import SinglePostContent from "@/app/(routes)/components/SinglePostContent"
 //   }
 
 
-export default async function PostInModal({params}:{params:Promise<{id:string}>}) {
-  const { id } = use(params)    
+export default async function PostInModal(props:{params:idParams}) {
+ // const { id } = use(params)    
+ const { id } = await props.params  
   const {
     existingPost,
     postAuthor,
