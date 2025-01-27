@@ -15,7 +15,7 @@ export default function MobileNav() {
           </Link>
           <Link
             href="/search"
-            className="flex items-center justify-center transition-transform transform hover:scale-110 hover:text-indigo-600  dark:bg-indigo-950 dark:text-indigo-200"
+            className="flex items-center justify-center transition-transform transform hover:scale-110 hover:text-indigo-600 z-10 dark:bg-indigo-950 dark:text-indigo-200"
           >
             <Search />
           </Link>
