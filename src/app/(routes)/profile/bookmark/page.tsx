@@ -2,8 +2,10 @@ import { prisma } from "@/db"
 import ProfileDetailedContent from "../../components/ProfileDetailedContent"
 import ProfileNav from "../../components/ProfileNav"
 import ProfilePosts from "../../components/ProfilePosts"
+import { getSessionEmailOrThrow } from "../../components/postingAction"
 
-export default async function BookMarkPage({ email }: { email: string }) {
+export default async function BookMarkPage() {
+  const email = await getSessionEmailOrThrow()
   const existingProfile = await prisma.profile.findFirst({ where: { email } })
 
   return (
