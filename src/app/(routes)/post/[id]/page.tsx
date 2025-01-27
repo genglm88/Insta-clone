@@ -11,13 +11,10 @@ import { getSessionEmailOrThrow } from "../../components/postingAction"
 import LikesInfo from "../../components/LikesInfo"
 
 
+type idParams = Promise<{id: string}>
 
-export default async function SinglePostPage({
-  params,
-}: {
-  params: { id: string }
-}) {
-  const { id } =  params
+export default async function SinglePostPage(props:{params:idParams}) {
+  const { id } =  await props.params
   const existingPost = await prisma.posting.findFirstOrThrow({
     where: { id },
   })
