@@ -1,10 +1,13 @@
-// import { Suspense } from "react"
+export const dynamic = 'force-dynamic';
+
+import { Suspense } from "react"
 import BrowsePosts from "../components/BrowsePost"
-//import Spinner from "../components/Spinner"
+import Spinner from "../components/Spinner"
 
 export default async function BrowsePage() {
   return (
- 
-      <BrowsePosts />)
-
+    <Suspense fallback={<Spinner />}>
+      <BrowsePosts />
+    </Suspense>
+  )
 }
