@@ -5,12 +5,12 @@ import SinglePostContent from "@/app/(routes)/components/SinglePostContent"
 // Define the type for `params`
 type PageProps = {
   params: {
-    id: string;
-  };
-};
+    id: string
+  }
+}
 
-export default async function PostInModal({params}: PageProps) {
-  const { id } =  params
+export default async function PostInModal({ params }: PageProps) {
+  const { id } = params
   const {
     existingPost,
     postAuthor,

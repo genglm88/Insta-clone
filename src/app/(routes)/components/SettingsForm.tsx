@@ -1,11 +1,11 @@
 "use client"
 
-import { Button, Slider, Switch, TextArea, TextField } from "@radix-ui/themes"
+import { Button, Switch, TextArea, TextField } from "@radix-ui/themes"
 
 import { settingFormAction } from "./settingFormAction"
 import { useRouter } from "next/navigation"
 import { Profile } from "next-auth"
-import { CloudUploadIcon, SlidersIcon } from "lucide-react"
+import { CloudUploadIcon } from "lucide-react"
 import { useRef, useState } from "react"
 import Image from "next/image"
 import useUploadSingleImageFile from "@/utils/uploadSingleImage"

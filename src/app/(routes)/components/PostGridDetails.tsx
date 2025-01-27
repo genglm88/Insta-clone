@@ -10,14 +10,14 @@ export default function PostGridDetails({
   posts,
   profiles,
   likes,
-  authorEmail,
-  bookMarks
+
+  bookMarks,
 }: {
   posts: Posting[]
   profiles: Profile[]
   likes: Like[]
-  authorEmail: string
-  bookMarks:BookMark[]
+
+  bookMarks: BookMark[]
 }) {
   return (
     <Masonry
@@ -53,7 +53,10 @@ export default function PostGridDetails({
               </div>
               <div className="flex  items-start gap-1 ">
                 <LikesInfo post={post} myLike={isLikedbyMe || null} />
-                <BookMarkInfo post={post} myBookMark = {isBookMarkedByMe || null} />
+                <BookMarkInfo
+                  post={post}
+                  myBookMark={isBookMarkedByMe || null}
+                />
               </div>
             </div>
             <span className="inline-block text-indigo-900/80 text-xs lg:max-w-[512px] mt-2  dark:bg-indigo-950 dark:text-indigo-200">

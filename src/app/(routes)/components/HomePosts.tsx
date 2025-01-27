@@ -1,16 +1,10 @@
 import { prisma } from "@/db"
-import { Follower, Profile } from "@prisma/client"
-import PostGrid from "./PostGrid"
+import { Profile } from "@prisma/client"
+
 import PostGridDetails from "./PostGridDetails"
 import { getSessionEmailOrThrow } from "./postingAction"
 
-export default async function HomePosts({
-  follows,
-  profiles,
-}: {
-  follows: Follower[]
-  profiles: Profile[]
-}) {
+export default async function HomePosts({ profiles }: { profiles: Profile[] }) {
   try {
     const posts = await prisma.posting.findMany({
       where: { authorEmail: { in: profiles.map((p) => p.email) } },
@@ -24,9 +18,12 @@ export default async function HomePosts({
       where: { postId: { in: posts.map((p) => p.id) }, authorEmail },
     })
 
-    const bookMarks = await prisma.bookMark.findMany({where:{
-      postId: {in:posts.map(p=>p.id)}, authorEmail,
-    }})
+    const bookMarks = await prisma.bookMark.findMany({
+      where: {
+        postId: { in: posts.map((p) => p.id) },
+        authorEmail,
+      },
+    })
     return (
       <div>
         {posts.length ? (
@@ -35,8 +32,7 @@ export default async function HomePosts({
               posts={posts}
               profiles={profiles}
               likes={likes}
-              authorEmail={authorEmail}
-              bookMarks = {bookMarks}
+              bookMarks={bookMarks}
             />
           </>
         ) : (

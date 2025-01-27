@@ -1,10 +1,9 @@
-import { Session } from "next-auth"
 import HomeTopRow from "./HomeTopRow"
 import { prisma } from "@/db"
 import { getSessionEmailOrThrow } from "./postingAction"
 import HomePosts from "./HomePosts"
 
-export default async function UserHome({ session }: { session: Session }) {
+export default async function UserHome() {
   try {
     const email = await getSessionEmailOrThrow()
     // const userProfile = await prisma.profile.findFirst({
@@ -30,8 +29,8 @@ export default async function UserHome({ session }: { session: Session }) {
 
     return (
       <div className="">
-        <HomeTopRow followingProfiles={followingProfiles}/>
-       <HomePosts follows={followering} profiles={followingProfiles}/>
+        <HomeTopRow followingProfiles={followingProfiles} />
+        <HomePosts profiles={followingProfiles} />
       </div>
     )
   } catch (error) {

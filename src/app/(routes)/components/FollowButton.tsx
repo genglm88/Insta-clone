@@ -1,6 +1,6 @@
 "use client"
 import { Button } from "@radix-ui/themes"
-import { UserMinus, UserMinusIcon, UserPlusIcon } from "lucide-react"
+import { UserMinusIcon, UserPlusIcon } from "lucide-react"
 import { followProfile, unFollowProfile } from "./postingAction"
 import { useRouter } from "next/navigation"
 import { useState } from "react"

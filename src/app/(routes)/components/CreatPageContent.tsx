@@ -5,7 +5,7 @@ import { Button, TextArea } from "@radix-ui/themes"
 import { CloudUpload } from "lucide-react"
 import Image from "next/image"
 import { useRef, useState } from "react"
-import { postingAction } from "../components/postingAction"
+
 import { useRouter } from "next/navigation"
 
 export default function CreatePageContent() {
@@ -20,8 +20,8 @@ const router = useRouter()
   useUploadSingleImageFile(file, setImageUrl, setIsUploading)
 
   return (
-    <form action={ async (formData:FormData)=>{
-       const post_id =  await postingAction(formData )
+    <form action={ async ()=>{
+      
        router.push(`/profile`)
       router.refresh()
     }

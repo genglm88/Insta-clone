@@ -15,7 +15,7 @@ export default async function SettingsPage() {
   })
 
   return (
-    <div className="max-w-lg p-2 mx-auto text-indigo-900/80  dark:bg-indigo-950 dark:text-indigo-200">
+    <div className="max-w-lg  mx-auto text-indigo-900/80  dark:bg-indigo-950 dark:text-indigo-200">
       <h2 className="my-4 font-bold text-2xl">Profile settings</h2>
 
       <SettingsForm userEmail={userEmail} profile={existingProfile || undefined} />

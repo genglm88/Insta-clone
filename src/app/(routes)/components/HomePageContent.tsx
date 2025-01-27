@@ -22,7 +22,7 @@ export default async function HomePageContent() {
       </div>
     )
   return <div className="card-container">
-    <UserHome session={session} />
+    <UserHome  />
   
   </div>
 }
