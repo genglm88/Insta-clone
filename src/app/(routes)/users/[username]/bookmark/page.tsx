@@ -3,12 +3,10 @@ import ProfileNav from "@/app/(routes)/components/ProfileNav"
 import ProfilePosts from "@/app/(routes)/components/ProfilePosts"
 import { prisma } from "@/db"
 
-export default async function UserBookMarkPage({
-  params,
-}: {
-  params: { username: string }
-}) {
-    const { username } =  params
+export type idParams = Promise<{username: string}>
+
+export default async function UserBookMarkPage(props:{params:idParams}) {
+    const { username } =  await props.params
   const existingProfile = await prisma.profile.findFirst({ where: { username } })
   
   return (

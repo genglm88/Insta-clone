@@ -3,13 +3,10 @@ import { prisma } from "@/db"
 import { getSessionEmailOrThrow } from "../../components/postingAction"
 
 import ProfileContentWithFollow from "../../components/ProfileContentWithFollow("
+import { idParams } from "./bookmark/page"
 
-export default async function UserPage({
-  params,
-}: {
-  params: { username: string }
-}) {
-  const { username } =  params
+export default async function UserPage(props:{params:idParams}) {
+  const { username } =  await props.params
   const userEmail = await getSessionEmailOrThrow()
   try {
     const userProfile = await prisma.profile.findFirst({

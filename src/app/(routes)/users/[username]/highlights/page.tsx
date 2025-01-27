@@ -2,13 +2,10 @@ import ProfileDetailedContent from "@/app/(routes)/components/ProfileDetailedCon
 import ProfileNav from "@/app/(routes)/components/ProfileNav"
 import ProfilePosts from "@/app/(routes)/components/ProfilePosts"
 import { prisma } from "@/db"
+import { idParams } from "../bookmark/page"
 
-export default async function UserHightlightsPage({
-  params,
-}: {
-  params: { username: string }
-}) {
-  const { username } =  params
+export default async function UserHightlightsPage(props:{params:idParams}) {
+  const { username } =  await props.params
 
   const existingProfile = await prisma.profile.findFirst({
     where: { username },
