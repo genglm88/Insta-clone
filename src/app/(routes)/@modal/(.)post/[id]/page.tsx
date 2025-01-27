@@ -3,14 +3,17 @@ import { singlePostData } from "@/app/(routes)/components/postingAction"
 import SinglePostContent from "@/app/(routes)/components/SinglePostContent"
 
 // Define the type for `params`
-type PageProps = {
-  params: {
-    id: string
-  }
+type IdPageProp = {
+  params:IdPageParam
 }
 
-export default async function PostInModal({ params }: PageProps) {
-  const { id } = params
+type IdPageParam = {
+    id: string
+  }
+
+
+export default async function PostInModal(props: IdPageProp) {
+  const { id } = props.params
   const {
     existingPost,
     postAuthor,
