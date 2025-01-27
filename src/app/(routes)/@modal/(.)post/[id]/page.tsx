@@ -7,7 +7,7 @@ export default async function PostInModal({
 }: {
   params: { id: string }
 }) {
-  const { id } = await params
+  const { id } =  params
   const {
     existingPost,
     postAuthor,

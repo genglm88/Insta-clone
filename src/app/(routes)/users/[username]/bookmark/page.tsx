@@ -8,7 +8,7 @@ export default async function UserBookMarkPage({
 }: {
   params: { username: string }
 }) {
-    const { username } = await params
+    const { username } =  params
   const existingProfile = await prisma.profile.findFirst({ where: { username } })
   
   return (

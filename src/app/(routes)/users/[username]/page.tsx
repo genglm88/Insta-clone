@@ -9,7 +9,7 @@ export default async function UserPage({
 }: {
   params: { username: string }
 }) {
-  const { username } = await params
+  const { username } =  params
   const userEmail = await getSessionEmailOrThrow()
   try {
     const userProfile = await prisma.profile.findFirst({

@@ -17,7 +17,7 @@ export default async function SinglePostPage({
 }: {
   params: { id: string }
 }) {
-  const { id } = await params
+  const { id } =  params
   const existingPost = await prisma.posting.findFirstOrThrow({
     where: { id },
   })

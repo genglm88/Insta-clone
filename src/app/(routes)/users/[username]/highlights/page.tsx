@@ -8,7 +8,7 @@ export default async function UserHightlightsPage({
 }: {
   params: { username: string }
 }) {
-  const { username } = await params
+  const { username } =  params
 
   const existingProfile = await prisma.profile.findFirst({
     where: { username },
