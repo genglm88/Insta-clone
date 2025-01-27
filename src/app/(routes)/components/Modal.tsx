@@ -9,7 +9,7 @@ export default function Modal({ children }: { children: ReactNode }) {
       onClick={() => router.back()}
       className="bg-indigo-900/60 fixed inset-0  dark:bg-indigo-950/70 dark:text-indigo-200"
     >
-      <div className="bg-indigo-50 fixed rounded-xl shadow-lg inset-[140px] p-4  dark:bg-indigo-950/70 dark:text-indigo-200">
+      <div className="bg-indigo-50 fixed rounded-xl shadow-lg  inset-[20px] sm:inset-[140px] p-4  dark:bg-indigo-950/70 dark:text-indigo-200">
         <div
           onClick={(ev) => ev.stopPropagation()}
           className="inset-[5px]  absolute overflow-auto"

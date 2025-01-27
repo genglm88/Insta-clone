@@ -31,7 +31,7 @@ export default async function SinglePostContent({
     where: { email: commentAuthorEmail },
   })
   return (
-    <div className="max-w-4xl grid p-8 md:grid-cols-2 gap-4 mt-12  dark:bg-indigo-800 dark:text-indigo-200 rounded-lg">
+    <div className="max-w-4xl grid p-4 md:p-8 md:grid-cols-2 gap-4 mt-12  dark:bg-indigo-800 dark:text-indigo-200 rounded-lg">
       <div className="flex  flex-col gap-4 items-start lg:max-w-[360px]">
         <Image
           className="rounded-xl "
